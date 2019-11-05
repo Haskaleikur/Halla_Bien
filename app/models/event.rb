@@ -8,9 +8,9 @@ class Event < ApplicationRecord
     validates :price, presence: true, length: { in: 1..1000 }
     validates :location, presence: true
 
-    belongs_to :organisator class_name "User"
+    belongs_to :organisator, class_name: "User"
     has_many :participations
-    has_many :attendees through: :participations, class_name "User"
+    has_many :attendees, through: :participations, class_name: "User"
 
 
     private
