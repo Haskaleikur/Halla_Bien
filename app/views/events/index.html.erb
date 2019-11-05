@@ -1,62 +1,80 @@
-<p id="notice"><%= notice %></p>
+<div class="jumbotron jumbotron-fluid jumbotron-hero">
+  <div class='container'>
+    <div class="text-center">
+    <br>
+    <h1>Sign Up<h1>
+    </div>
+    <br>
+    <br>
+    <div class="text-center">
+      <div class="d-flex justify-content-center">
 
-<h1>Events</h1>
+      <p id="notice"><%= notice %></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Start date</th>
-      <th>Duration</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Location</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+          <h1>Events</h1>
 
-  <tbody>
-  <ul>
-  <% if user_signed_in? %>
-    <li>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    </li>
+          <table>
+            <thead>
+              <tr>
+                <th>Start date</th>
+                <th>Duration</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Location</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
 
-    <li>
-      Voici ton email : <%= current_user.email %>
-    </li>
+            <tbody>
+            <ul>
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+              </li>
 
-    <li>
-      <%= link_to "Edit email / password", edit_user_registration_path %>
-    </li>
+              <li>
+                Voici ton email : <%= current_user.email %>
+              </li>
 
-  <% else %>
-    <li>    
-      <%= link_to "Sign in", new_user_session_path %>
-    </li>
+              <li>
+                <%= link_to "Edit email / password", edit_user_registration_path %>
+              </li>
 
-    <li>
-      <%= link_to "Sign up", new_user_registration_path %>
-    </li>
+            <% else %>
+              <li>    
+                <%= link_to "Sign in", new_user_session_path %>
+              </li>
 
-  <% end %>
-</ul>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.start_date %></td>
-        <td><%= event.duration %></td>
-        <td><%= event.title %></td>
-        <td><%= event.description %></td>
-        <td><%= event.price %></td>
-        <td><%= event.location %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+              <li>
+                <%= link_to "Sign up", new_user_registration_path %>
+              </li>
 
-<br>
+            <% end %>
+          </ul>
+              <% @events.each do |event| %>
+                <tr>
+                  <td><%= event.start_date %></td>
+                  <td><%= event.duration %></td>
+                  <td><%= event.title %></td>
+                  <td><%= event.description %></td>
+                  <td><%= event.price %></td>
+                  <td><%= event.location %></td>
+                  <td><%= link_to 'Show', event %></td>
+                  <td><%= link_to 'Edit', edit_event_path(event) %></td>
+                  <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
 
-<%= link_to 'New Event', new_event_path %>
+          <br>
+
+          <%= link_to 'New Event', new_event_path %>
+      
+    
+      </div>
+    </div>
+  </div>
+</div>
+

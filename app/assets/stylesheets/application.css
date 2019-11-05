@@ -13,3 +13,90 @@
  *= require_tree .
  *= require_self
  */
+
+
+body {
+    
+    font-family: 'Varela Round', cursive;
+    color:black;
+  }
+
+a:link{
+
+color: black;
+
+text-decoration: none;
+
+}
+
+a:visited {
+
+color: black
+
+}
+
+a:hover {
+
+text-decoration: underline
+
+}
+
+a:active {
+
+color: black
+
+}
+
+.jumbotron { 
+
+
+    background-image: url("bryan-garces-eVCbafxs69E-unsplash.jpg");
+    position: relative; 
+    top: 0;
+    bottom: 0; 
+    left: 0; 
+
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+    
+    background-position: center;
+    background-size: cover; 
+    background-attachment: fixed ;
+
+  }
+
+  .card {
+    border-radius: 25px;
+    background: linear-gradient(to right bottom, #e6edfa, #e9edfc, #ececfd, #f1ebfd, #f6eafd, #faeaf9, #fdeaf6, #ffeaf2, #ffedee, #fff0eb, #fff4ea, #fef8ec);
+  }
+
+  .btn {
+    font-family: 'Anton', cursive;
+  }
+
+  .btn:hover {
+    background-position: right center; 
+  }
+
+  .btn-1 {
+    background: linear-gradient(to right bottom, #f66d08, #f87a09, #fa860d, #fc9213, #fd9e1a, #fda51a, #fdad1c, #fcb41e, #f9ba18, #f6bf12, #f2c50c, #eeca07);
+  }
+
+  .btn-2 {
+    background: linear-gradient(to left top, #8bf8f9, #77faf5, #63fcee, #4ffde6, #3bfedc, #26fed0, #0ffdc3, #00fcb4, #00f9a0, #00f68b, #00f273, #07ee58);
+  }
+
+  .btn-3 {
+    background: linear-gradient(to right bottom, #9696f7, #86a1fb, #7aabfb, #72b4fa, #71bcf6, #7dbff8, #88c1f9, #92c4fb, #a9c3ff, #c0c1ff, #d7bffe, #ecbdf8);
+  }
+
+  .btn-4 {
+  background: linear-gradient(to right bottom, #fc6573, #fb6574, #f96575, #f86575, #f66576, #f6697a, #f66c7e, #f67082, #f7788b, #f88093, #f9879b, #fa8fa3);
+  cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/sad.png"), auto;
+  }
+
+  .btn-5 {
+    background: linear-gradient(to right bottom, #ffecd2 0%, #fcb69f 51%, #ffecd2 100%);
+  }
+
