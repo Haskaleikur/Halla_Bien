@@ -9,7 +9,7 @@ class Event < ApplicationRecord
     validates :location, presence: true
 
     belongs_to :organisator, class_name: "User"
-    has_many :participations
+    has_many :participations dependent: :destroy
     has_many :attendees, through: :participations, class_name: "User"
 
 
