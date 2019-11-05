@@ -69,3 +69,5 @@ gem "table_print", "~> 1.5"
 gem 'bootstrap', '~> 4.3.1'
 
 gem 'dotenv-rails'
+
+gem 'devise'

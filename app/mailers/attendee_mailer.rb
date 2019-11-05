@@ -3,9 +3,9 @@ class AttendeeMailer < ApplicationMailer
 
     def attendee_email
 
-        @organisator = Event.organisator_id.first_name
-        @attendee = Participation.attendee_id.first_name
-        @event = Participation.last.event_id.title
+        @organisator = Event.last.organisator.first_name
+        @attendee = Participation.last.attendee.first_name
+        @event = Participation.last.event.title
 
         @url  = 'http://monsite.fr/login'
 

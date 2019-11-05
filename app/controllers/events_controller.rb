@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:update, :edit, :update, :destroy]
+  before_action :check_user, only: [:update, :edit, :destroy]
 
   # GET /events
   # GET /events.json
@@ -68,7 +70,18 @@ class EventsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def event_params
-      params.require(:event).permit(:start_date, :duration, :title, :description, :price, :location)
+    def event_params 
+      params.require(:event).permit(:start_date, :duration, :title, :description, :price, :location, :organisator_id)
     end
+
+    def check_user
+      Event.all.each do |user_check|
+        unless current_user.id == user_check.organisator.id
+          flash[:danger] = "You need to be the organisator of the event to make any modification"
+        end
+      end
+    end
+  
+
+
 end

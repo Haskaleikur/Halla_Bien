@@ -27,19 +27,9 @@ end
     Event.create(start_date: Faker::Date.forward(days: 23), duration: 5*rand(1..1000),description: Faker::Lorem.paragraph(sentence_count: 5), title: Faker::Quotes::Shakespeare.king_richard_iii_quote, price: Faker::Number.within(range: 1..100), location: Faker::Address.city, organisator_id: User.all.sample.id)
 end
 
-# #Attribuer des Events à des Organisators
-#     Event.all.sample(10).each do |my_event|
-#     my_event.organisator_id = User.all.sample.id
-#     my_event.save
-# end
-
 #Créer des Participations
 30.times do 
     Participation.create(attendee_id: User.all.sample.id, event_id: Event.all.sample.id)
 end
 
-# #Attribuer des Events à des Attendees 
-#     Participation.all.each do |my_party|
-#     my_party.attendee_id = Event.all.sample.id
-#     my_party.save
-# end
+
