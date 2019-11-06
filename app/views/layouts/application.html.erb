@@ -27,23 +27,43 @@
 
   <body>  
   <div class="d-flex flex-column flex-md-row align-items-center px-md-4 bg-white">
-    <a class="mr-md-auto navbar-brand" href="<%= root_path %>" title="Home"><img style="max-width:50px;" src="/assets/H.png"></a>
+    <a class="mr-md-auto navbar-brand" href="<%= events_path %>" title="Home"><img style="max-width:50px;" src="/assets/H.png"></a>
     
     <nav class="my-2 my-md-0 mr-md-10">
         <a href="<%= events_path %>" class ="btn btn-outline rounded-pill">Home</a>
-        <a href="<%= new_event_path %>" class ="btn btn-outline rounded-pill">New Event</a>
-        <a href="#" class ="btn btn-outline rounded-pill">Profile</a>
-        
+        <a href="<%= new_event_path %>" class ="btn btn-outline rounded-pill">New Event</a>        
       <button class="btn btn-outline-dark rounded-pill dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Menu
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a href="#" class="dropdown-item">Log in</a>
-        <a href="#" class="dropdown-item">Edit Profile</a>
-        <a href="#" class="dropdown-item">Sign Up</a>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class:'dropdown-item' %>
-      </div>
+      <% if user_signed_in? %>
+      <li>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete %> 
+      </li>
 
+      <li>
+      <a href="<%= edit_user_path(current_user.id)%>" class ="btn btn-outline rounded-pill">Profile</a>
+      </li>
+
+      <li>
+        Voici ton email : <%= current_user.email %> 
+      </li>
+
+      <li>
+        <%= link_to "Edit email / password", edit_user_registration_path %> 
+      </li>
+
+    <% else %>
+      <li>    
+        <%= link_to "Sign in", new_user_session_path %> 
+      </li>
+
+      <li>
+        <%= link_to "Sign up", new_user_registration_path %> 
+      </li>
+
+    <% end %>
+    </div>
     </nav>
   </div>
   <%= yield %>
