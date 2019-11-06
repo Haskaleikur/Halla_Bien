@@ -9,20 +9,22 @@
     <div class="text-center">
       <div class="d-flex justify-content-center">
 
-        %= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
 
         <div class="field">
           <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'form-control rounded-pill' %>
+          <br>
         </div>
 
         <div class="actions">
-          <%= f.submit "Send me reset password instructions" %>
+          <%= f.submit "Send me reset password instructions", class:'btn btn-outline-light btn-lg rounded-pill' %>
+          <br>
+          <br>
         </div>
         
-
-        <%= render "devise/shared/links" %>
+        <%= render"devise/shared/links" %>
         <% end %>
       </div>
     </div>

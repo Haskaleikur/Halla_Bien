@@ -2,7 +2,7 @@
   <div class='container'>
     <div class="text-center">
     <br>
-    <h1>Sign Up<h1>
+    <h1>Events<h1>
     </div>
     <br>
     <br>
@@ -10,8 +10,6 @@
       <div class="d-flex justify-content-center">
 
       <p id="notice"><%= notice %></p>
-
-          <h1>Events</h1>
 
           <table>
             <thead>
@@ -27,31 +25,24 @@
             </thead>
 
             <tbody>
-            <ul>
+            
             <% if user_signed_in? %>
-              <li>
-                <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-              </li>
-
-              <li>
+              
                 Voici ton email : <%= current_user.email %>
-              </li>
-
-              <li>
-                <%= link_to "Edit email / password", edit_user_registration_path %>
-              </li>
+               
+                <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:'btn btn-outline-dark rounded-pill' %>
+              
+                <%= link_to "Edit email / password", edit_user_registration_path, class:'btn btn-outline-dark rounded-pill' %>
 
             <% else %>
-              <li>    
+                  
                 <%= link_to "Sign in", new_user_session_path %>
-              </li>
-
-              <li>
+            
                 <%= link_to "Sign up", new_user_registration_path %>
-              </li>
+              
 
             <% end %>
-          </ul>
+          
               <% @events.each do |event| %>
                 <tr>
                   <td><%= event.start_date %></td>
@@ -71,7 +62,6 @@
           <br>
 
           <%= link_to 'New Event', new_event_path %>
-      
     
       </div>
     </div>

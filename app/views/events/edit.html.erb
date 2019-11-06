@@ -1,6 +1,21 @@
-<h1>Editing Event</h1>
+<div class="jumbotron jumbotron-fluid jumbotron-hero">
+  <div class='container'>
+    <div class="text-center">
+    <br>
+    <h1>Editing Event<h1>
+    </div>
+    <br>
+    <br>
+    <div class="text-center">
+      <div class="d-flex justify-content-center">
+        <%= render 'form', event: @event %>
 
-<%= render 'form', event: @event %>
+        <%= link_to 'Show', @event %> |
+        <%= link_to 'Back', events_path %>
+      
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+
