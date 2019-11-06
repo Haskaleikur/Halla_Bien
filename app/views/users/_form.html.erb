@@ -13,29 +13,29 @@
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, class:'form-control rounded-pill' %>
   </div>
 
   <div class="field">
     <%= form.label :encrypted_password %>
-    <%= form.text_field :encrypted_password %>
+    <%= form.text_field :encrypted_password, class:'form-control rounded-pill' %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, class:'form-control rounded-pill' %>
   </div>
 
   <div class="field">
     <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+    <%= form.text_field :first_name, class:'form-control rounded-pill' %>
   </div>
 
   <div class="field">
     <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+    <%= form.text_field :last_name, class:'form-control rounded-pill' %>
   </div>
-
+  <br>
   <div class="actions">
     <%= form.submit %>
   </div>

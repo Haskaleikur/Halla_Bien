@@ -1,6 +1,18 @@
-<h1>Editing User</h1>
-
-<%= render 'form', user: @user %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<div class="jumbotron jumbotron-fluid jumbotron-hero">
+  <div class='container'>
+    <div class="text-center">
+    <br>
+    <h1>Editing User<h1>
+    </div>
+    <br>
+    <br>
+    <div class="text-center">
+      <div class="d-flex justify-content-center">
+      <%= render 'form', user: @user %>
+      </div>
+      <br>
+      <%= link_to 'Back', users_path, class:'btn btn-3 rounded-pill' %>
+      <%= link_to 'Show', @user, class:'btn btn-2 rounded-pill' %> 
+    </div>
+  </div>
+</div>

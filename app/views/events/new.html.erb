@@ -8,11 +8,10 @@
     <br>
     <div class="text-center">
       <div class="d-flex justify-content-center">
-        <%= render 'form', event: @event %>
-
-        <%= link_to 'Back', events_path %>
-      
+        <%= render 'form', event: @event %>      
       </div>
+      <br>
+      <%= link_to 'Back', events_path, class:'btn btn-3 rounded-pill'  %>
     </div>
   </div>
 </div>

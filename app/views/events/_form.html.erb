@@ -18,27 +18,28 @@
 
   <div class="field">
     <%= form.label :duration %>
-    <%= form.number_field :duration %>
+    <%= form.number_field :duration, class:'form-control rounded-pill' %>
   </div>
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class:'form-control rounded-pill' %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, class:'form-control rounded-pill' %>
   </div>
 
   <div class="field">
     <%= form.label :price %>
-    <%= form.number_field :price %>
+    <%= form.number_field :price, class:'form-control rounded-pill' %>
   </div>
 
   <div class="field">
     <%= form.label :location %>
-    <%= form.text_field :location %>
+    <%= form.text_field :location, class:'form-control rounded-pill' %>
+    <br>
   </div>
 
   <%= form.hidden_field :organisator_id, value: current_user.id %>
