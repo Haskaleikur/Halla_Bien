@@ -71,3 +71,5 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'dotenv-rails'
 
 gem 'devise'
+
+gem 'stripe'

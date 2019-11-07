@@ -18,7 +18,7 @@ Participation.destroy_all
 #Création de Users
 
 30.times do 
-    User.create(email: Faker::Internet.email, encrypted_password: Faker::Lorem.characters(number: 10, min_alpha: 4, min_numeric: 1), description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4), first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+    User.create(email: Faker::Internet.email, password: Faker::Lorem.characters(number: 10, min_alpha: 4, min_numeric: 1), description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4), first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
 end
 
 #Création d'Events

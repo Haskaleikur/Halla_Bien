@@ -40,6 +40,8 @@
           <%= @event.location %>
         </p>
 
+        <%= link_to 'Participer', new_participation_path  %>
+
         <%= link_to 'Edit', edit_event_path(@event) %> |
         <%= link_to 'Back', events_path %>
       

@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:update, :edit, :update, :destroy]
-  before_action :check_user, only: [:update, :edit, :destroy]
+  before_action :check_user, only: [ :update, :edit, :destroy]
 
   # GET /events
   # GET /events.json
@@ -12,6 +12,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    puts "§§§§§§§§§§§§§#{current_user.first_name}§§§§§§§§§§§§§§§§§§§§"
   end
 
   # GET /events/new
@@ -60,6 +61,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
+      puts "§§§§§§§§§§§§§§§§§§#{check_user}§§§§§§§§§§§§§§§§§§§§"
     end
   end
 
@@ -75,11 +77,10 @@ class EventsController < ApplicationController
     end
 
     def check_user
-      Event.all.each do |user_check|
-        unless current_user.id == user_check.organisator.id
+        unless current_user == @event.organisator
           flash[:danger] = "You need to be the organisator of the event to make any modification"
+          redirect_to events_path
         end
-      end
     end
   
 
