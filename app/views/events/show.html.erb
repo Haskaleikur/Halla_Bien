@@ -9,47 +9,65 @@
     <div class="text-center">
       <div class="d-flex justify-content-center">
         <p id="notice"><%= notice %></p>
+        <img src="/assets/BackToDuck.jpg" class="card-img-top imgBorder" alt="Halla Bien">
+        <p id="notice"><%= notice %></p>
+        <div class='container'>
+          <div class="card-columns">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><%= @event.title %></h5>
+                  <p class="card-text"> </p>
+                  <p <%= @event.description %></p>
+                  <p <%= @event.start_date %></p>
+                  <p <%= @event.duration %></p> 
+                  <p <%= @event.price %></p>
+                  <p <%= @event.location %></p>
+                  <p <%= link_to 'Show', @event, class:'btn btn-primary' %></p>
+                  <% if current_user == @event.organisator %>
+                  <p <%= link_to 'Edit', edit_event_path(@event), class:'btn btn-2' %></p>
+                  <p <%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-4' %></p>
+                  <% end %>
+              </div>
 
-        <p>
-          <strong>Start date:</strong>
-          <%= @event.start_date %>
-        </p>
+            
+              
+              <%= form_tag participations_path, method: "post" do %>
 
-        <p>
-          <strong>Duration:</strong>
-          <%= @event.duration %>
-        </p>
+                <article>
+                
+                  <% if flash[:error].present? %>
+                    <div id="error_explanation">
+                      <p><%= flash[:error] %></p>
+                    </div>
+                  <% end %>
+                  <label class="amount">
+                    <span>Amount: <%= @event.price.to_f / 100 %>€</span>
+                  </label>
+                </article>
 
-        <p>
-          <strong>Title:</strong>
-          <%= @event.title %>
-        </p>
 
-        <p>
-          <strong>Description:</strong>
-          <%= @event.description %>
-        </p>
 
-        <p>
-          <strong>Price:</strong>
-          <%= @event.price %>
-        </p>
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="Paiement <%= @event.title %>"
+              data-amount="<%= @event.price %>"
+              data-locale="auto">
+              </script>
+              <input name="event_id" value="<%= @event.id %>" type="hidden">
+              <input name="attendee_id" value="<%= current_user.id %>" type="hidden">
 
-        <p>
-          <strong>Location:</strong>
-          <%= @event.location %>
-        </p>
 
-        <%= link_to 'Participer', new_participation_path  %>
+              <% end %>
+                
+            </div>
+                
+          </div>
+        </div>  
 
-        <%= link_to 'Edit', edit_event_path(@event) %> |
+        <%= link_to 'Edit', edit_event_path(@event) %> 
         <%= link_to 'Back', events_path %>
-      
+        
       </div>
     </div>
   </div>
 </div>
-
-
-
-

@@ -13,7 +13,6 @@
           <div class="card-columns">
             <% @events.each do |event| %>
               <div class="card">
-                <img src="/assets/BackToDuck.jpg" class="card-img-top imgBorder" alt="Halla Bien">
                 <div class="card-body">
                   <h5 class="card-title"><%= event.title %></h5>
                   <p class="card-text"><%= event.description %><%= event.start_date %><%= event.duration %><%= event.price %><%= event.location %></p>
@@ -27,10 +26,7 @@
               <% end %>
           </div>
           </div>  
-          <br>
-
-          <%= link_to 'New Event', new_event_path %>
-    
+          <br>    
       
     </div>
   </div>
