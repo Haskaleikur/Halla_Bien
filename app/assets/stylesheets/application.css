@@ -55,6 +55,8 @@ color: black
     top: 0;
     bottom: 0; 
     left: 0; 
+    margin-bottom: 0;
+    margin-top: 0;
 
     /* Preserve aspet ratio */
     width: 100%;
