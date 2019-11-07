@@ -10,7 +10,7 @@ class Event < ApplicationRecord
 
     belongs_to :organisator, class_name: "User"
     has_many :participations, dependent: :destroy
-    has_many :attendees, through: :participations, class_name: "User"
+    has_many :attendees, through: :participations, class_name: "User" 
 
 
     private

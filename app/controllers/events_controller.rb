@@ -12,7 +12,6 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    puts "§§§§§§§§§§§§§#{current_user.first_name}§§§§§§§§§§§§§§§§§§§§"
   end
 
   # GET /events/new
@@ -61,7 +60,6 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
-      puts "§§§§§§§§§§§§§§§§§§#{check_user}§§§§§§§§§§§§§§§§§§§§"
     end
   end
 

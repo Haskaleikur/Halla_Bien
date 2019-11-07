@@ -10,10 +10,6 @@ require 'faker'
 
 Faker::Config.locale = 'fr'
 
-User.destroy_all
-Event.destroy_all
-Participation.destroy_all
-
 
 #Création de Users
 

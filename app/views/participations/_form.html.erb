@@ -11,4 +11,12 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.label :stripe_customer_id %>
+    <%= form.text_field :stripe_customer_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
 <% end %>
